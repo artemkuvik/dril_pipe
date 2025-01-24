@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start(); echo 111; ?>
 <!DOCTYPE html>
 <html>
 <head>
