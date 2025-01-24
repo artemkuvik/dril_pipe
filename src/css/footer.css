@@ -1,0 +1,18 @@
+footer {
+  width: 100%;
+  height: auto;
+  background-color: #303030;
+  padding-top: 0.8vw;
+  padding-bottom: 0.8vw;
+  font-family: "Lato", sans-serif;
+}
+.main_foot {
+  color: #e1dad1;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.info_foot {
+  font-size: 1vw;
+}

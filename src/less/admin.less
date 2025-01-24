@@ -1,0 +1,443 @@
+@import "../var.less";
+.start_block{
+	font-family: "Lato", sans-serif;
+	margin: 2vw auto;
+	width: calc(40% - 1vw);
+	background-color: @contrast;
+	padding: 0.5vw;
+	border-radius: 0.5vw;
+	text-align: center;
+	font-size: 1.5vw;
+}
+.main_block{
+	font-family: "Lato", sans-serif;
+	height: 33vw;
+	width: 75%;
+	margin: 0 auto;
+	padding: 0vw;
+	border-radius: 0.5vw;
+	display: flex;
+	gap: 0.5vw;
+}
+.left_nav{
+	position: relative;
+	border-radius: 0.5vw;
+	width: 18%;
+	font-size: 1.3vw;
+	text-align: left;
+	padding: 0.5vw;
+	background-color: @contrast;
+}
+.left_nav a{
+	background-color: @back;
+	display: inline-block;
+	width: calc(100% - 1vw);
+	padding: 0.5vw;
+	margin: 0.1vw 0;
+	border-radius: 0.5vw;
+	text-decoration: none;
+	color: @contrast;
+	font-weight: bold;
+	transition: all 0.3s;
+	&:hover{
+		filter: brightness(0.8);
+	}
+}
+.logout{
+	left: 50%;
+	transform: translateX(-50%);
+	position: absolute;
+	bottom: 0.5vw;
+}
+
+.right_main_info{
+	border-radius: 0.5vw;
+	width: calc(82% - 1vw);
+	padding: 0.5vw;
+	background-color: @back;
+	border: 0.13vw solid #605a51;
+}
+.left_nav a.active {
+    filter: brightness(0.7);
+}
+
+h2{
+	margin-top: 0.5vw;
+	color: @contrast;
+}
+.hr{
+	width: 100%;
+	height: 0.1vw;
+	background-color: @contrast;
+	margin-top: -0.5vw;
+	margin-bottom: 2vw;
+}
+.table_order, .table_product{
+	margin: 0 auto;
+	max-height: 26vw;
+	overflow: auto;
+}
+.table_order th{
+
+	
+	background-color: @contrast;
+}
+.table_order td{
+	text-align: center;
+	background-color: #f2f3f4;
+
+}
+table{
+	width: 95%;
+	font-family: "Lato", sans-serif;
+	margin: 0 auto;
+}
+.display_product{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.display_product a{
+	background-color: @contrast;
+	color: @back;
+	display: inline-block;
+	width: 10vw;
+	padding: 0.2vw;
+	text-align: center;
+	border-radius: 0.5vw;
+	margin-top: -0.5vw;
+}
+
+
+
+.product-image-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5vw;
+    padding: 0.5vw;
+}
+
+.product-image {
+    width: 14.5vw;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    transition: transform 0.3s;
+}
+
+
+.product-image-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+
+.submit-button {
+    background-color: @back;
+    color: @contrast;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+   	transition: all 0.3s;
+}
+
+.submit-button:hover {
+    filter: brightness(1.2);
+}
+
+.edit-btn{
+	background-color: @back;
+	color: @contrast;
+	text-decoration: none;
+	padding: 0.5vw;
+	border-radius: 0.5vw;
+	transition: 0.3s all;
+	&:hover{
+		filter: brightness(1.2);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+	position: relative;
+    background-color: @back;
+    margin: 13% auto;
+    padding: 1.5vw;
+    border-radius: 0.5vw;
+    border: 1px solid @contrast;
+    width: 20%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+	position: absolute;
+	right: 0.5vw;
+	top: 0;
+    color: #aaa;
+    float: right;
+    font-size: 1.5vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+	filter: brightness(0.8);
+}
+.modal-content h2{
+	margin-bottom: 1.5vw;
+}
+#editForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+#editForm div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#editForm label {
+    flex: 1;
+    font-size: 1rem;
+    color: @contrast;
+    margin-right: 1vw;
+    text-align: left;
+}
+
+#editForm input[type="text"],
+#editForm input[type="number"],
+#editForm select {
+    flex: 2;
+    padding: 0.5vw;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5vw;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#editForm button[type="submit"] {
+    background-color: @contrast;
+    color: @back;
+    padding: 0.7em 1.5em;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-top: 0.5vw;
+}
+
+#editForm button[type="submit"]:hover {
+    filter: brightness(0.8);
+}
+
+#editServiceForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+#editServiceForm div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#editServiceForm label {
+    flex: 1;
+    font-size: 1rem;
+    color: @contrast;
+    margin-right: 1vw;
+    text-align: left;
+}
+
+#editServiceForm input[type="text"],
+#editServiceForm input[type="number"],
+#editServiceForm select,
+#editServiceForm textarea {
+    flex: 2;
+    padding: 0.5vw;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5vw;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#editServiceForm button[type="submit"] {
+    background-color: @contrast;
+    color: @back;
+    padding: 0.7em 1.5em;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-top: 0.5vw;
+}
+
+#editServiceForm button[type="submit"]:hover {
+    filter: brightness(0.8);
+}
+
+#editServiceForm #currentPhoto {
+    font-size: 0.9rem;
+    color: @contrast;
+    margin-top: 1vw;
+}
+
+.close {
+    position: absolute;
+    right: 1vw;
+    top: 0.5vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+    color: @contrast;
+    transition: all 0.3s;
+}
+
+.close:hover {
+    filter: brightness(0.8);
+}
+
+h2 {
+    color: @contrast;
+    text-align: center;
+    margin-bottom: 1vw;
+}
+
+.modal-content-two{
+	position: relative;
+    background-color: @back;
+    margin: 4% auto;
+    padding: 1.5vw;
+    border-radius: 0.5vw;
+    border: 1px solid @contrast;
+    width: 20%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+form#addProductForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+form#addProductForm label {
+    font-size: 1.2vw;
+    color: @contrast;
+    text-align: left;
+}
+
+form#addProductForm input[type="text"],
+form#addProductForm input[type="number"],
+form#addProductForm select,
+form#addProductForm input[type="file"] {
+    padding: 0.8vw;
+    font-size: 1vw;
+    border-radius: 0.5vw;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+form#addProductForm input[type="text"]:focus,
+form#addProductForm input[type="number"]:focus,
+form#addProductForm select:focus,
+form#addProductForm input[type="file"]:focus {
+    border-color: @contrast;
+}
+
+
+form#addProductForm button[type="submit"] {
+    background-color: @contrast;
+    color: @back;
+    border: none;
+    border-radius: 0.5vw;
+    padding: 0.8vw;
+    font-size: 1.2vw;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+form#addProductForm button[type="submit"]:hover {
+    filter: brightness(0.8);
+}
+
+
+form#addServiceForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+form#addServiceForm label {
+    font-size: 1.2vw;
+    color: @contrast;
+    text-align: left;
+}
+
+form#addServiceForm input[type="text"],
+form#addServiceForm input[type="number"],
+form#addServiceForm select,
+form#addServiceForm input[type="file"] {
+    padding: 0.8vw;
+    font-size: 1vw;
+    border-radius: 0.5vw;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+form#addServiceForm input[type="text"]:focus,
+form#addServiceForm input[type="number"]:focus,
+form#addServiceForm select:focus,
+form#addServiceForm input[type="file"]:focus {
+    border-color: @contrast;
+}
+
+form#addServiceForm button[type="submit"] {
+    background-color: @contrast;
+    color: @back;
+    border: none;
+    border-radius: 0.5vw;
+    padding: 0.8vw;
+    font-size: 1.2vw;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+form#addServiceForm button[type="submit"]:hover {
+    filter: brightness(0.8);
+}
